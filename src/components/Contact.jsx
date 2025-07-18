@@ -93,7 +93,7 @@ const Contact = () => {
       .catch((error) => {
         setLoading(false);
         console.error(error);
-        setConfirmation("Something went wrong. Please try again. :/");
+        setConfirmation("Something went wrong. Please Contact Me Through My Social Links!!");
       });
   };
 
@@ -109,7 +109,7 @@ const Contact = () => {
             name="name"
             value={form.name}
             onChange={handleChange}
-            placeholder="Insert Your name here..."
+            placeholder="Enter Your name here..."
             type="text"
           />
           {nameError && <span className="text-red-500">{nameError}</span>}
