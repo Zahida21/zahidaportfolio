@@ -65,26 +65,33 @@ const ProjectCard = ({ name, description, tags, image, source_code_link, index }
 };
 
 const Works = () => {
-  return (
+ return (
     <>
-      <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} `}>My work</p>
+      <motion.div variants={textVariant()} initial="hidden" whileInView="show">
+        <p className={`${styles.sectionSubText}`}>My work</p>
         <h2 className={`${styles.sectionHeadText}`}>Projects</h2>
       </motion.div>
+
       <div className="w-full flex">
-        <motion.p variants={fadeIn("", "", 0.1)} className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]">
+        <motion.p
+          variants={fadeIn("", "", 0.1, 1)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
+        >
           Following projects showcase my skills and experience through examples
-          of my work. Each project is briefly described with links to code
-          repositories in it.
+          of my work. There’s plenty to explore and ignite your imagination!
         </motion.p>
       </div>
-      <div className="mt-20 flex flex-wrap gap-7">
+
+      <div className="mt-20 flex flex-wrap gap-7 min-h-[300px]">
         {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} {...project} />
+          <ProjectCard key={`project-${index}`} {...project} index={index} />
         ))}
       </div>
     </>
   );
 };
 
-export default SectionWrapper(Works, "");
+export default SectionWrapper(Works, "work");
