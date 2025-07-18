@@ -20,7 +20,9 @@ const Navbar = () => {
   }, [toggle]);
 
   const renderNavLinks = (isSecondary) => (
-    <ul className={`list-none ${isSecondary ? 'flex sm:hidden' : 'hidden sm:flex'} flex-row gap-6`}>
+    // <ul className={`list-none ${isSecondary ? 'flex sm:hidden' : 'hidden sm:flex'} flex-row gap-6`}>
+    <ul className={`list-none ${isSecondary ? 'flex sm:hidden flex-col gap-4 items-start' : 'hidden sm:flex flex-row gap-6'}`}>
+
       {navLinks.map((link) => (
         <li
           key={link.id}
