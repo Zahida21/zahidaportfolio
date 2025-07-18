@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+dist/
+build/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# VSCode settings
+.vscode/
+
+# Environment files
+.env
