@@ -48,7 +48,7 @@ const Hero = () => {
        <img
   src={logo}
   alt="Profile"
-  className="max-[755px]:w-[400px] max-[755px]:h-[576px] max-[755px]:rounded-[54px] w-56 h-56 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full border-4 border-[#915EFF] object-cover shadow-lg transition-all duration-500 hover:scale-105"
+  className="max-[755px]:w-[400px] max-[755px]:h-[500px] max-[755px]:rounded-[54px] w-56 h-56 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full border-4 border-[#915EFF] object-cover shadow-lg transition-all duration-500 hover:scale-105"
 />
 
         </div>

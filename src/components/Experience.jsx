@@ -36,7 +36,7 @@ const ExperienceCard = ({ experience }) => (
       variants={fadeIn("", "", 0.2, 0.5)}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.3 }}
     >
     <div>
       <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>

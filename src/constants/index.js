@@ -83,10 +83,10 @@ export const services = [
 ];
 
 export const technologies = [
-  { name: "C++", icon: cpp },
-  { name: "Python", icon: python },
-  { name: "Java", icon: java },
-  { name: "C", icon: c },
+  // { name: "C++", icon: cpp },
+  // { name: "Python", icon: python },
+  // { name: "Java", icon: java },
+  // { name: "C", icon: c },
   { name: "HTML 5", icon: html },
   { name: "CSS 3", icon: css },
   { name: "JavaScript", icon: javascript },

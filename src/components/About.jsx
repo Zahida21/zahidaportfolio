@@ -31,6 +31,7 @@ const ServiceCard = ({ index, title, icon }) => (
 const About = () => {
   return (
     <>
+    <div className="aboutsec mt-10">
       <motion.div  variants={fadeIn("", "", 0.2, 0.5)}initial="hidden" 
   whileInView="show" 
   viewport={{ once: false, amount: 0.2 }}
@@ -40,12 +41,12 @@ const About = () => {
       </motion.div>
       <motion.p
         variants={fadeIn('', '', 0.1, 1)}initial='hidden'
-        whileInView='show' viewport={{once:false, amount:0.2}}
+        whileInView='show' viewport={{once:true, amount:0.2}}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
          Hi! I’m Zahida — a passionate full-stack developer and graphic designer who turns ideas into engaging digital experiences. From user-friendly websites to bold, story-driven visuals, I blend design and digital craft to create interfaces that are not only visually striking but intuitively seamless. Step into my creative world — I’d love to hear your thoughts! ✨
       </motion.p>
-
+</div>
       <div className="mt-20 flex flex-wrap gap-10">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
