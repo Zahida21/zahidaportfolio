@@ -1,23 +1,15 @@
-// ✅ Imports
-import { Suspense, useRef } from "react";
+import { useState, useEffect, Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.esm";
 import "../../index.css";
 
-// ✅ Number of stars (can lower this for small devices)
-const NUM_STARS = 1200; // ⚠️ Consider lowering to 800 for small screens if performance issues persist
+const NUM_STARS = 1200;
 
 const Stars = () => {
-  // ✅ UseRef for animated rotation
-  const ref = useRef({
-    rotation: { x: 0, y: 0, z: Math.PI / 4 },
-  });
-
-  // ✅ Generate random star positions inside a sphere
+  const ref = useRef({ rotation: { x: 0, y: 0, z: Math.PI / 4 } });
   const sphere = random.inSphere(new Float32Array(NUM_STARS * 3), { radius: 1.2 });
 
-  // ✅ Animate star field rotation
   useFrame((state, delta) => {
     ref.current.rotation.x -= delta / 10;
     ref.current.rotation.y -= delta / 15;
@@ -38,13 +30,26 @@ const Stars = () => {
   );
 };
 
-// ✅ Conditionally render based on screen width
-// Prevents crash/hang on very small screens (≤ 640px)
 const StarsCanvas = () => {
-  // ✅ Only show stars if screen is wide enough
-  if (typeof window !== "undefined" && window.innerWidth < 640) {
-    return null; // ✅ Skip rendering to save memory on small screens
-  }
+  const [showStars, setShowStars] = useState(false); // ✅ Use state instead of direct window check
+
+  useEffect(() => {
+    // ✅ Check screen size on mount
+    if (typeof window !== "undefined" && window.innerWidth > 640) {
+      setShowStars(true);
+    }
+
+    // ✅ Optional: Listen for resize and update dynamically (only if needed)
+    const handleResize = () => {
+      setShowStars(window.innerWidth > 640);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  if (!showStars) return null; // ✅ Avoid rendering on small screens
 
   return (
     <div className="stars-canvas-container">

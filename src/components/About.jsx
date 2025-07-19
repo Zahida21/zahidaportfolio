@@ -45,7 +45,7 @@ const About = () => {
           variants={fadeIn('', '', 0.2, 0.5)}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: false, amount: 0.2 }}
         >
           <p className={styles.sectionSubText}>Introduction</p>
           <h2 className={styles.sectionHeadText}>About Me</h2>
