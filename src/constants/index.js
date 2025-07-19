@@ -76,6 +76,9 @@ export const services = [
   {title: "Tailwind CSS", icon: tailwind },
   {title: "Photoshop", icon: photoshop },
   {title: "Figma", icon: figma },
+   {title: "Bootstrap", icon: Bootstrap },
+
+  { title: "git", icon: git },
   // { title: "C++", icon: cpp },
   // { title: "Python", icon: python },
   // { title: "Java", icon: java },
