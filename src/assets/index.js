@@ -1,6 +1,4 @@
 // Import company logos
-import mathwork from "./company/mathwork.png";
-import eduskill from "./company/eduskill.png";
 import devdesign from "./company/devdesign.png";
 
 // Import tech stack images
@@ -14,12 +12,8 @@ import mongodb from "./tech-stack/mongodb.png"
 import express from "./tech-stack/express.png"
 
 // Import project images
-import weatherpedia from "./projects/WeatherPedia.png";
+
 import wandernest from "./projects/wandernest.jpg";
-import termpw from "./projects/termpw.png";
-import payloadmaster from "./projects/payloadmaster.png";
-import mhft from "./projects/mhft.png";
-import CompileVortex from "./projects/CompileVortex.png";
 import Ecommerce from "./projects/ecommerce-website.png";
 import gemini from "./projects/gemini.png";
 import passwordManager from "./projects/passwordManager.png";
@@ -57,7 +51,6 @@ import menu from "./menu.svg";
 import close from "./close.svg";
 
 export {
-  mathwork,
   python,
   c,
   cpp,
@@ -72,15 +65,9 @@ export {
   tailwind,
   threejs,
   wandernest,
-  weatherpedia,
-  termpw,
-  payloadmaster,
-  mhft,
-  CompileVortex,
   logo,
   menu,
   close,
-  eduskill,
   mongodb,
   express,
   photoshop,

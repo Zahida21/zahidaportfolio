@@ -10,14 +10,7 @@ import {
   tailwind,
   nodejs,
   git,
-  weatherpedia,
-  termpw,
-  payloadmaster,
-  threejs,
-  mhft,
-  mathwork,
-  CompileVortex,
-  eduskill,
+ 
   mongodb,
   express,
   photoshop,
@@ -105,7 +98,7 @@ export const technologies = [
 export const experiences = [
   
   {
-    title: "Multidisciplinary Designer & Developer",
+    title: "Designer & Developer",
     company_name: "Freelance | Remote",
     icon: devdesign, // e.g., designDevIcon
     iconBg: "#161329",
