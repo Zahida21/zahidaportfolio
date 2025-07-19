@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
@@ -8,19 +8,19 @@ import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ProjectCard = ({ name, description, tags, image, source_code_link, index }) => {
+const ProjectCard = ({ name, description, tags, image, source_code_link, index, isMobile }) => {
   return (
     <motion.div
-      variants={fadeIn("up", "spring", 0.2, 0.75)}
+      variants={fadeIn("up", "spring", 0.2, isMobile ? 0.3 : 0.75)} // 💬 reduced animation duration on mobile
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
     >
       <Tilt
         options={{
-          max: 45,
+          max: isMobile ? 10 : 45, // 💬 limited tilt on small screens
           scale: 1,
-          speed: 450,
+          speed: isMobile ? 200 : 450,
         }}
         className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
       >
@@ -29,6 +29,7 @@ const ProjectCard = ({ name, description, tags, image, source_code_link, index }
             src={image}
             alt="project_image"
             className="w-full h-full object-cover rounded-2xl"
+            loading="lazy" // 💬 added lazy loading for performance
           />
 
           {source_code_link && (
@@ -48,13 +49,13 @@ const ProjectCard = ({ name, description, tags, image, source_code_link, index }
         </div>
 
         <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
+          <h3 className="text-white font-bold text-[22px] sm:text-[24px]">{name}</h3>
+          <p className="mt-2 text-secondary text-[13px] sm:text-[14px]">{description}</p>
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (
-            <p key={tag.name} className={`text-[14px] ${tag.color}`}>
+            <p key={tag.name} className={`text-[13px] sm:text-[14px] ${tag.color}`}>
               #{tag.name}
             </p>
           ))}
@@ -65,7 +66,20 @@ const ProjectCard = ({ name, description, tags, image, source_code_link, index }
 };
 
 const Works = () => {
- return (
+  const [isMobile, setIsMobile] = useState(false);
+
+  // 💬 Check screen width once to optimize animations on small screens
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize(); // initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return (
     <>
       <motion.div variants={textVariant()} initial="hidden" whileInView="show">
         <p className={`${styles.sectionSubText}`}>My work</p>
@@ -78,16 +92,16 @@ const Works = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
+          className="mt-3 text-secondary text-[16px] sm:text-[17px] max-w-3xl leading-[26px] sm:leading-[30px]"
         >
           Following projects showcase my skills and experience through examples
           of my work. There’s plenty to explore and ignite your imagination!
         </motion.p>
       </div>
 
-      <div className="mt-20 flex flex-wrap gap-7 min-h-[300px]">
+      <div className="mt-16 sm:mt-20 flex flex-wrap justify-center gap-7 min-h-[300px]">
         {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} {...project} index={index} />
+          <ProjectCard key={`project-${index}`} {...project} index={index} isMobile={isMobile} />
         ))}
       </div>
     </>

@@ -76,9 +76,9 @@ export const services = [
   {title: "Tailwind CSS", icon: tailwind },
   {title: "Photoshop", icon: photoshop },
   {title: "Figma", icon: figma },
-   {title: "Bootstrap", icon: Bootstrap },
+  //  {title: "Bootstrap", icon: Bootstrap },
 
-  { title: "git", icon: git },
+  // { title: "git", icon: git },
   // { title: "C++", icon: cpp },
   // { title: "Python", icon: python },
   // { title: "Java", icon: java },
@@ -90,16 +90,16 @@ export const technologies = [
   // { name: "Python", icon: python },
   // { name: "Java", icon: java },
   // { name: "C", icon: c },
-  { name: "HTML 5", icon: html },
-  { name: "CSS 3", icon: css },
   { name: "JavaScript", icon: javascript },
   { name: "Rect JS", icon: reactjs },
-  { name: "Tailwind CSS", icon: tailwind },
-  { name: "Node JS", icon: nodejs },
-  // { name: "Three JS", icon: threejs },
-  { name: "Bootstrap", icon: Bootstrap },
-
+  { name: "CSS 3", icon: css },
   { name: "git", icon: git },
+  { name: "Node JS", icon: nodejs },
+  { name: "Bootstrap", icon: Bootstrap },
+  { name: "Tailwind CSS", icon: tailwind },
+  { name: "HTML 5", icon: html },
+  // { name: "Three JS", icon: threejs },
+
 ];
 
 export const experiences = [

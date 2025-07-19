@@ -1,11 +1,11 @@
 import React from "react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
-import { slideIn } from "../utils/motion";
+
 
 const Footer = () => {
   return (
-    <motion.footer
+    <footer
 
       className="w-full bg-black-100 text-white py-6 mt-10 px-8"
     >
@@ -51,7 +51,7 @@ const Footer = () => {
           &copy; {new Date().getFullYear()} Zahida. Made with ♥ by Zahida
         </p>
       </div>
-    </motion.footer>
+    </footer>
   );
 };
 

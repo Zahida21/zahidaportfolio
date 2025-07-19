@@ -142,3 +142,12 @@
 .confirmation {
   color: #00ff00;
 }
+
+/* ✅ New custom image styles for <755px */
+@media (max-width: 755px) {
+  .mobile-img {
+    width: 310px !important;
+    height: 476px !important;
+    border-radius: 54px !important;
+  }
+}

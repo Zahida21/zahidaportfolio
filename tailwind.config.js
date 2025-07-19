@@ -3,6 +3,9 @@ module.exports = {
   mode: 'jit',
   theme: {
     extend: {
+        screens: {
+      'mobile': {'max': '755px'},
+    },
       colors: {
         primary: '#050816',
         secondary: '#aaa6c3',

@@ -7,10 +7,11 @@ import Typewriter from "typewriter-effect";
 const Hero = () => {
   return (
     <section className="relative w-full h-screen mx-auto">
+      {/* ✅ Modified layout: added md:flex-row for proper wrapping */}
       <div
         className={`absolute inset-0 top-[70px] max-w-7xl mx-auto ${styles.paddingX} flex flex-col md:flex-row items-center justify-between gap-6`}
       >
-        {/* Left Text Section */}
+        {/* ✅ Left Section */}
         <div className="flex flex-col md:w-1/2">
           <div className="flex flex-row items-start gap-5">
             <div className="flex flex-col justify-center items-center mt-5">
@@ -43,14 +44,14 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right Image Section */}
+        {/* ✅ Right Image Section */}
         <div className="w-full flex justify-center md:justify-end md:w-1/2 mt-4 md:mt-0">
-       <img
-  src={logo}
-  alt="Profile"
-  className="max-[755px]:w-[400px] max-[755px]:h-[500px] max-[755px]:rounded-[54px] w-56 h-56 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full border-4 border-[#915EFF] object-cover shadow-lg transition-all duration-500 hover:scale-105"
-/>
-
+          {/* ✅ Added custom class 'mobile-img' and responsive sizes */}
+          <img
+            src={logo}
+            alt="Profile"
+            className="mobile-img w-52 h-52 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full border-4 border-[#915EFF] object-cover shadow-lg transition-all duration-500 hover:scale-105"
+          />
         </div>
       </div>
 
