@@ -41,7 +41,7 @@ const Footer = () => {
               
               className="text-sm text-slate-200 cursor-pointer "
             >
-              zahidazfathima@gmail.com
+              fathimathzahida21@gmail.com
             </a>
           </div>
         </div>
